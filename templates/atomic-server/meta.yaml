@@ -1,0 +1,70 @@
+name: Atomic Server
+description:
+  Atomic Server is a powerful and flexible server for managing and serving
+  atomic data. It provides a robust platform for data management with support
+  for various protocols and formats.
+instructions: null
+changeLog:
+  - date: 2026-09-16
+    description:
+      Bumped image from the abandoned joepmeneer/atomic-server:v0.38.0 to
+      ghcr.io/ontola/atomic-server pinned by digest (upstream only publishes a
+      rolling develop tag, no versioned tags), picking up the v0.40.3 security
+      fixes (SSRF, invite reuse, path traversal, stored XSS); corrected the
+      GitHub link to the active ontola/atomic-server repo
+  - date: 2025-04-24
+    description: First Release
+links:
+  - label: Github
+    url: https://github.com/ontola/atomic-server
+  - label: Documentation
+    url: https://docs.atomicdata.dev
+contributors:
+  - name: Ahson Shaikh
+    url: https://github.com/Ahson-Shaikh
+schema:
+  type: object
+  required:
+    - appServiceName
+    - appServiceImage
+  properties:
+    appServiceName:
+      type: string
+      title: App Service Name
+      default: atomic-server
+    appServiceImage:
+      type: string
+      title: App Service Image
+      default: ghcr.io/ontola/atomic-server@sha256:c8596aca39731f0b1ee6fa236aac5d60f18efdefa4c1f61054ea65eae7a5683e
+benefits:
+  - title: Powerful Data Management
+    description:
+      Atomic Server provides a robust platform for managing and serving atomic
+      data with support for various protocols and formats.
+  - title: Flexible Configuration
+    description:
+      Highly configurable with support for custom domains, ports, and storage
+      options.
+  - title: Secure by Default
+    description:
+      Built with security in mind, providing secure data access and management
+      capabilities.
+features:
+  - title: Multiple Protocols
+    description: Supports various protocols for data access and management.
+  - title: Customizable Storage
+    description: Flexible storage options with support for custom storage paths.
+  - title: Web Interface
+    description: Includes a web interface for easy management and monitoring.
+  - title: REST API
+    description: Provides a REST API for programmatic access and automation.
+  - title: SSL Support
+    description: Built-in support for SSL/TLS encryption.
+  - title: Containerized
+    description: Easy to deploy and manage in containerized environments.
+tags:
+  - Atomic
+  - Server
+  - Data Management
+  - API
+  - Web Interface

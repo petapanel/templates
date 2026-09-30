@@ -1,0 +1,104 @@
+name: Discourse
+description:
+  Discourse is a modern, open-source discussion platform built for the next
+  decade of the internet. It provides a clean, intuitive interface for community
+  discussions, forums, mailing lists, and chat. Discourse is fully self-hosted
+  and includes real-time notifications, a rich markdown editor, trust levels,
+  plugin support, and deep email integration. This template uses the official
+  Discourse Docker images with a bundled Postgres database and a Redis cache.
+instructions:
+  After deployment, the first setup wizard will walk you through creating your
+  admin account and configuring your site. Make sure your SMTP credentials are
+  correct before deploying — Discourse requires email to activate accounts.
+  Allow 5-10 minutes for the initial bootstrap to complete.
+changeLog:
+  - date: 2025-04-30
+    description: Initial release
+  - date: 2025-07-15
+    description: Version bumped to 3.4.5
+  - date: 2026-06-30
+    description: Switched to official discourse/discourse image
+links:
+  - label: Website
+    url: https://www.discourse.org
+  - label: Documentation
+    url: https://docs.discourse.org
+  - label: GitHub
+    url: https://github.com/discourse/discourse
+  - label: Docker Hub
+    url: https://hub.docker.com/r/discourse/discourse
+contributors:
+  - name: Ahson Shaikh
+    url: https://github.com/Ahson-Shaikh
+schema:
+  type: object
+  required:
+    - appServiceName
+    - appServiceImage
+    - dbServiceImage
+    - discourseEmail
+    - smtpAddress
+    - smtpPort
+    - smtpUsername
+    - smtpPassword
+  properties:
+    appServiceName:
+      type: string
+      title: App Service Name
+      default: discourse
+    appServiceImage:
+      type: string
+      title: App Service Image
+      default: discourse/discourse:2026.1.4
+    dbServiceImage:
+      type: string
+      title: Database Service Image
+      default: discourse/postgres:pg17@sha256:75d07f64264da8499bae58cfe002d6de28509e9aca6817159984f0d62ef768be
+    discourseEmail:
+      type: string
+      title: Developer Email
+      default: admin@example.com
+    smtpAddress:
+      type: string
+      title: SMTP Address
+      default: smtp.gmail.com
+    smtpPort:
+      type: string
+      title: SMTP Port
+      default: "587"
+    smtpUsername:
+      type: string
+      title: SMTP Username
+      default: user@gmail.com
+    smtpPassword:
+      type: string
+      title: SMTP Password
+      default: ""
+benefits:
+  - title: Modern Discussion Platform
+    description: Clean, intuitive interface for community discussions and forums
+  - title: Self-hosted Solution
+    description: Keep your community data private by hosting your own platform
+  - title: Scalable Architecture
+    description: Built with performance and scalability in mind
+  - title: Open Source
+    description: Free and open-source platform with active community support
+features:
+  - title: Rich Text Editor
+    description: Advanced text editing with markdown support
+  - title: Real-time Updates
+    description: Live updates and notifications
+  - title: Mobile Responsive
+    description: Fully responsive design for all devices
+  - title: User Management
+    description: Comprehensive user and permission management
+  - title: Search Functionality
+    description: Powerful search capabilities
+  - title: Plugin System
+    description: Extensible through plugins and themes
+tags:
+  - Forum
+  - Discussion
+  - Self-hosted
+  - Open Source
+  - Community
